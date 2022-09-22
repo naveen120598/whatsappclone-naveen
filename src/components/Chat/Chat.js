@@ -18,11 +18,11 @@ const Chat = () => {
 
   useEffect(()=>{
     if(roomId){
-    axios.get(`http://localhost:5000/room/${roomId}`).then(res=>{
+    axios.get(`https://whatsappclone-naveen.herokuapp.com/room/${roomId}`).then(res=>{
       setRoomName(res.data.name)
       setUpdatedAt(res.data.updatedAt)
     })
-    axios.get(`http://localhost:5000/messages/${roomId}`).then(res=>{
+    axios.get(`https://whatsappclone-naveen.herokuapp.com/messages/${roomId}`).then(res=>{
       setMessages(res.data)
     })
   }
@@ -48,7 +48,7 @@ const Chat = () => {
     if(!input){
       return
     }
-    await axios.post('http://localhost:5000/message/new',{
+    await axios.post('https://whatsappclone-naveen.herokuapp.com/message/new',{
       message:input,
       name: user.displayName,
       timestamp: new Date(),

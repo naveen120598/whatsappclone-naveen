@@ -12,7 +12,7 @@ const Sidebar = () => {
     const [rooms,setRooms] = useState([])
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/all/rooms').then(res=>{
+        axios.get('https://whatsappclone-naveen.herokuapp.com/all/rooms').then(res=>{
             setRooms(res.data)
         })
     },[])
